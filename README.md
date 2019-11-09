@@ -1,14 +1,14 @@
 # Mean-cms
 MEAN Stack (Angular 8) Tutorial:Blog CMS
 ## task list
-* [ ] New Node Express.js App using Express Generator
-* [ ] Install Mongoose.js
-* [ ] Install Passport.js
-* [ ] Add Mongoose Models or Schemas
-* [ ] Add Express Router for Login and Register
-* [ ] Add Secure Express Router for Category CRUD
-* [ ] Add Secure Express Router for Post CRUD
-* [ ] Add Non-Secure Express Router for Front Page
+* [X] New Node Express.js App using Express Generator
+* [X] Install Mongoose.js
+* [X] Install Passport.js
+* [X] Add Mongoose Models or Schemas
+* [X] Add Express Router for Login and Register
+* [X] Add Secure Express Router for Category CRUD
+* [X] Add Secure Express Router for Post CRUD
+* [X] Add Non-Secure Express Router for Front Page
 * [X] New Angular 8 Web App using Angular CLI
 * [X] Add Angular 8 Routing and Navigation
 * [X] Add a custom Angular 8 HttpInterceptor
