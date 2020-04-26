@@ -1,0 +1,19 @@
+<div *ngIf="todo">
+    <div>
+      <label>First Name: </label> {{todo.name}}
+    </div>
+    <div>
+      <label>Age: </label> {{todo.age}}
+    </div>
+    <div>
+      <label>Active: </label> {{todo.active}}
+    </div>
+   
+    <span class="button is-small btn-primary" *ngIf='todo.active' (click)='updateActive(false)'>Inactive</span>
+   
+    <span class="button is-small btn-primary" *ngIf='!todo.active' (click)='updateActive(true)'>Active</span>
+   
+    <span class="button is-small btn-danger" (click)='deletetodo()'>Delete</span>
+   
+    <hr/>
+  </div>
