@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'first', component: FirstComponent, children: [
     {path: 'first_one', component: FirstOneComponent, data: {title: 'title for first one component'}}
   ]},
-  {path: 'second', component: SecondComponent},
+  {path: 'second', component: SecondComponent, data: {descrption: 'Description of Second Component'}},
   {path: 'home', component: HomeComponent, data : {title:'Title for Home Component'}}
 
 ];
