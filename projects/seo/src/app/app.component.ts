@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { filter, map } from 'rxjs/operators';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent {
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(DOCUMENT) private dom
     ) {
 }
 
@@ -34,6 +36,7 @@ if (data.descrption) {
 } else {
   this.metaService.removeTag("name='description'")
 }
+          //You can set the Meta & Title here
 })
 })
 

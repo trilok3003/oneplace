@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-first',
@@ -8,10 +9,12 @@ import { Title } from '@angular/platform-browser';
 })
 export class FirstComponent implements OnInit {
   title = 'One Component Title';
-  constructor(private titleService: Title) { }
+   hostName="https://www.example.com"
+  constructor(private titleService: Title, private seoService: SeoService) { }
 
   ngOnInit() {
     this.titleService.setTitle(this.title);
+    this.seoService.updateCanonicalUrl(this.hostName+'/first');
   }
 
 }
