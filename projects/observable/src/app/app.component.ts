@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -55,7 +55,51 @@ ngOnInit() {
     error => { console.log("error") },           //error callback
     () => { console.log("Completed") }           //complete callback
   )
+
+    //Observable from Create Method
+    const obsUsingCreate = Observable.create( observer => {
+      observer.next( '1' )
+      observer.next( '2' )
+      observer.next( '3' )
+  
+      observer.complete()
+    })
+    
+     obsUsingCreate
+       .subscribe(val => console.log(val),
+               error=> console.log("error"),
+               () => console.log("complete"))
+               // of operators
+               const array=[1,2,3,4,5,6,7]
+               const obsof1=of(array);
+               obsof1.subscribe(val => console.log(val),
+                        error=> console.log("error"),
+                       () => console.log("complete"))
+                       const array1=[1,2,3,4,5,6,7]
+  const array2=['a','b','c','d','e','f','g']  
+  const obsof2=of(array1,array2 );
+  obsof2.subscribe(val => console.log(val),
+           error=> console.log("error"),
+          () => console.log("complete"))
+          const obsof5 = of(100, [1, 2, 3, 4, 5, 6, 7],"Hello World");
+          obsof5.subscribe(val => console.log(val),
+            error => console.log("error"),
+            () => console.log("complete"))
+            // from
+            const array3 = [1, 2, 3, 4, 5, 6, 7]
+            const obsfrom1 = from(array3);
+            obsfrom1.subscribe(val => console.log(val),
+              error => console.log("error"),
+              () => console.log("complete"))
+              let myMap = new Map()
+      myMap.set(0, 'Hello')
+      myMap.set(1, 'World')
+      const obsFrom3 = from(myMap);
+      obsFrom3.subscribe(val => console.log(val),
+        error => console.log("error"),
+        () => console.log("complete"))
 }
+
 
 }
 //  create
@@ -68,3 +112,9 @@ ngOnInit() {
 // range
 // throw
 // timer
+
+// Combination	combineLatest, concat, merge, startWith , withLatestFrom, zip
+// Filtering	debounceTime, distinctUntilChanged, filter, take, takeUntil
+// Transformation	bufferTime, concatMap, map, mergeMap, scan, switchMap
+// Utility	tap
+// Multicasting	share
