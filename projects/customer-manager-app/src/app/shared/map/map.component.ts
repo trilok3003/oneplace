@@ -7,7 +7,7 @@ import {
 
 import { debounceTime, startWith } from 'rxjs/operators';
 import { MapPointComponent } from './map-point.component';
-import { IMapDataPoint } from '../../shared/interfaces';
+import { IMapDataPoint } from '../interfaces';
 
 @Component({
   selector: 'cm-map',

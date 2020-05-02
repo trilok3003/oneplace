@@ -475,28 +475,28 @@
         }
       }
     },
-    "new1": {
+    "customer-manager-app": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/new1",
-      "sourceRoot": "projects/new1/src",
+      "root": "projects/customer-manager-app",
+      "sourceRoot": "projects/customer-manager-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/new1",
-            "index": "projects/new1/src/index.html",
-            "main": "projects/new1/src/main.ts",
-            "polyfills": "projects/new1/src/polyfills.ts",
-            "tsConfig": "projects/new1/tsconfig.app.json",
+            "outputPath": "dist/customer-manager-app",
+            "index": "projects/customer-manager-app/src/index.html",
+            "main": "projects/customer-manager-app/src/main.ts",
+            "polyfills": "projects/customer-manager-app/src/polyfills.ts",
+            "tsConfig": "projects/customer-manager-app/tsconfig.app.json",
             "aot": false,
             "assets": [
-              "projects/new1/src/favicon.ico",
-              "projects/new1/src/assets"
+              "projects/customer-manager-app/src/favicon.ico",
+              "projects/customer-manager-app/src/assets"
             ],
             "styles": [
-              "projects/new1/src/styles.css"
+              "projects/customer-manager-app/src/styles.css"
             ],
             "scripts": []
           },
@@ -504,8 +504,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/new1/src/environments/environment.ts",
-                  "with": "projects/new1/src/environments/environment.prod.ts"
+                  "replace": "projects/customer-manager-app/src/environments/environment.ts",
+                  "with": "projects/customer-manager-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -535,33 +535,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "new1:build"
+            "browserTarget": "customer-manager-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "new1:build:production"
+              "browserTarget": "customer-manager-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "new1:build"
+            "browserTarget": "customer-manager-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/new1/src/test.ts",
-            "polyfills": "projects/new1/src/polyfills.ts",
-            "tsConfig": "projects/new1/tsconfig.spec.json",
-            "karmaConfig": "projects/new1/karma.conf.js",
+            "main": "projects/customer-manager-app/src/test.ts",
+            "polyfills": "projects/customer-manager-app/src/polyfills.ts",
+            "tsConfig": "projects/customer-manager-app/tsconfig.spec.json",
+            "karmaConfig": "projects/customer-manager-app/karma.conf.js",
             "assets": [
-              "projects/new1/src/favicon.ico",
-              "projects/new1/src/assets"
+              "projects/customer-manager-app/src/favicon.ico",
+              "projects/customer-manager-app/src/assets"
             ],
             "styles": [
-              "projects/new1/src/styles.css"
+              "projects/customer-manager-app/src/styles.css"
             ],
             "scripts": []
           }
@@ -570,9 +570,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/new1/tsconfig.app.json",
-              "projects/new1/tsconfig.spec.json",
-              "projects/new1/e2e/tsconfig.json"
+              "projects/customer-manager-app/tsconfig.app.json",
+              "projects/customer-manager-app/tsconfig.spec.json",
+              "projects/customer-manager-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -582,12 +582,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/new1/e2e/protractor.conf.js",
-            "devServerTarget": "new1:serve"
+            "protractorConfig": "projects/customer-manager-app/e2e/protractor.conf.js",
+            "devServerTarget": "customer-manager-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "new1:serve:production"
+              "devServerTarget": "customer-manager-app:serve:production"
             }
           }
         }
