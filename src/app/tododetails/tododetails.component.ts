@@ -8,22 +8,22 @@ import { Todo } from '../todo';
   styleUrls: ['./tododetails.component.css']
 })
 export class TododetailsComponent implements OnInit {
-  @Input() todo: Todo;
+  @Input() todos: Todo[];
  
   constructor(private TodoService: TodoService) { }
  
   ngOnInit() {
   }
  
-  updateActive(isActive: boolean) {
+  updateActive(todo: Todo, isActive: boolean) {
     this.TodoService
-      .updateTodo(this.todo.key, { active: isActive })
-      .catch(err => console.log(err));
+      .updateTodo(todo.key, { active: isActive })
+      // .catch(err => console.log(err));
   }
  
-  deleteTodo() {
+  deletetodo(todo: Todo) {
     this.TodoService
-      .deleteTodo(this.todo.key)
-      .catch(err => console.log(err));
+      .deleteAll(todo.key)
+      // .catch(err => console.log(err));
   }
 }

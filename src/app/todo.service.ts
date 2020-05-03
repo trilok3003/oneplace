@@ -29,21 +29,35 @@ export class TodoService {
     // return this.firestore.collection('policies').add(policy);
   }
  
-  updateTodo(key: string, value: any) {
+  updateTodo(key: any, value: any) {
     this.firestore.doc('todos/' + key).update(value);
     // delete policy.id;
     // this.firestore.doc('policies/' + policy.id).update(policy);
-
   }
  
   getTodosList() {
     return this.firestore.collection('todos').snapshotChanges();
     // return this.firestore.collection('policies').snapshotChanges();
   }
+  getTodosDoneList() {
+    return this.firestore.collection('todos', ref => {
+      return ref.where('active', '==', false)
+    }).snapshotChanges();
+  }
+  getTodosNotDoneList() {
+    return this.firestore.collection('todos', ref => {
+      return ref.where('active', '==', true)
+    }).snapshotChanges();
+  }
+ 
  
   deleteAll(key?) {
-    this.firestore.doc('todos/' + key).delete();
+    if(key) {
+      this.firestore.doc('todos/' + key).delete();
+    }
+    else {
+      this.firestore.doc('todos/').delete();
+    }
     // this.firestore.doc('policies/' + policyId).delete();
   }
-
 }

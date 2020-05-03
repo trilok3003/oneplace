@@ -1,12 +1,4 @@
-<div class="container-fluid">
-  <div style="color: blue;">
-    <h1>{{title}}</h1>
-    <h3>{{description}}</h3>
-  </div>
- 
-  <nav>
-    <a routerLink="todos" class="btn btn-primary active" role="button" routerLinkActive="active">todos</a>
-    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
-  </nav>
+<div class="container">
+  <app-todos></app-todos>
   <router-outlet></router-outlet>
 </div>

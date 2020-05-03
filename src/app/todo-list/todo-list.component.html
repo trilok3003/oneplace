@@ -1,7 +1,5 @@
-<h1>todos</h1>
-<div *ngFor="let todo of todos" style="width: 300px;">
-  <app-todo-details [todo]='todo'></app-todo-details>
-</div>
+<app-todo-details [todos]='todos'></app-todo-details>
+
 <div style="margin-top:20px;">
   <button type="button" class="button btn-danger" (click)='deletetodos()'>Delete All</button>
 </div>

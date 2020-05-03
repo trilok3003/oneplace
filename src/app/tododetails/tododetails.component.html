@@ -1,19 +1,16 @@
-<div *ngIf="todo">
-    <div>
-      <label>First Name: </label> {{todo.name}}
-    </div>
-    <div>
-      <label>Age: </label> {{todo.age}}
-    </div>
-    <div>
-      <label>Active: </label> {{todo.active}}
-    </div>
+  <table class="table ">
+    <tbody>
+      <tr *ngFor="let todo of todos; let i = index">
+          <td *ngIf="todo.active">
+            <span class="badge  badge-primary">Closed</span>
+          </td>
+        <td>{{todo.name}}</td>
+        <td>
+          <button class="button  btn-primary" *ngIf='todo.active' (click)='updateActive(todo,false)'>Done</button>
    
-    <span class="button is-small btn-primary" *ngIf='todo.active' (click)='updateActive(false)'>Inactive</span>
-   
-    <span class="button is-small btn-primary" *ngIf='!todo.active' (click)='updateActive(true)'>Active</span>
-   
-    <span class="button is-small btn-danger" (click)='deletetodo()'>Delete</span>
-   
-    <hr/>
-  </div>
+         
+          <button class="button  btn-danger" (click)='deletetodo(todo)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

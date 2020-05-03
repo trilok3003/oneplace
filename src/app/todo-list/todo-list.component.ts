@@ -21,11 +21,14 @@ export class TodoListComponent implements OnInit {
     this.TodoService.getTodosList().subscribe(data => {
       this.todos = data.map(e => {
         return {
+          key: e.payload.doc.id,
           id: e.payload.doc.id,
           ...e.payload.doc.data()
         } as Todo;
       })
+      console.log(this.todos)
     });
+
     // this.TodoService.getTodosList()
     // .pipe(
     //   map(changes =>
