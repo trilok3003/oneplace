@@ -711,6 +711,124 @@
           }
         }
       }
+    },
+    "covid19-dashboard": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/covid19-dashboard",
+      "sourceRoot": "projects/covid19-dashboard/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/covid19-dashboard",
+            "index": "projects/covid19-dashboard/src/index.html",
+            "main": "projects/covid19-dashboard/src/main.ts",
+            "polyfills": "projects/covid19-dashboard/src/polyfills.ts",
+            "tsConfig": "projects/covid19-dashboard/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/covid19-dashboard/src/favicon.ico",
+              "projects/covid19-dashboard/src/assets"
+            ],
+            "styles": [
+              "projects/covid19-dashboard/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/covid19-dashboard/src/environments/environment.ts",
+                  "with": "projects/covid19-dashboard/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "covid19-dashboard:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "covid19-dashboard:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "covid19-dashboard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/covid19-dashboard/src/test.ts",
+            "polyfills": "projects/covid19-dashboard/src/polyfills.ts",
+            "tsConfig": "projects/covid19-dashboard/tsconfig.spec.json",
+            "karmaConfig": "projects/covid19-dashboard/karma.conf.js",
+            "assets": [
+              "projects/covid19-dashboard/src/favicon.ico",
+              "projects/covid19-dashboard/src/assets"
+            ],
+            "styles": [
+              "projects/covid19-dashboard/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/covid19-dashboard/tsconfig.app.json",
+              "projects/covid19-dashboard/tsconfig.spec.json",
+              "projects/covid19-dashboard/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/covid19-dashboard/e2e/protractor.conf.js",
+            "devServerTarget": "covid19-dashboard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "covid19-dashboard:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "MultipleApps"
 }
