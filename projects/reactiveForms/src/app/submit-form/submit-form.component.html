@@ -1,0 +1,19 @@
+<form [formGroup]="myForm" [hidden]="success" (ngSubmit)="submitHandler()">
+    <hr>
+
+    <div >
+        <input  placeholder="email" formControlName="email">
+    </div >
+
+    <div >
+        <textarea  placeholder="your message..." formControlName="message"></textarea>
+    </div >
+
+
+    <button  type="submit" [disabled]="myForm.invalid">Submit Form</button>
+
+</form>
+
+<div *ngIf="success" class="notification is-success">
+    Yay! We received your submission
+</div>

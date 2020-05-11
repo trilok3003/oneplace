@@ -1,0 +1,76 @@
+<form [formGroup]="myForm">
+
+    Value: {{ myForm.value | json }}
+    <ul>
+        <li>Valid:
+            <p>{{ myForm.valid }}</p>
+        </li>
+        <li>Invalid:
+            <p>{{ myForm.invalid }}</p>
+        </li>
+        <li>Dirty:
+            <p >{{ myForm.dirty }}</p>
+        </li>
+        <li>Pristine:
+            <p> {{ myForm.pristine }}</p>
+        </li>
+        <li>Touched:
+            <p >{{ myForm.touched }}</p>
+        </li>
+        <li>Untouched:
+            <p >{{ myForm.untouched }}</p>
+        </li>
+        <li>Pending:
+            <p >{{ myForm.pending }}</p>
+        </li>
+    </ul>
+
+    <hr>
+
+    <div >
+        <input  placeholder="email" formControlName="email" autocomplete="off">
+
+        <div  *ngIf="email.invalid && email.touched" class="has-text-danger">
+            Your email does not look right
+        </div >
+    </div >
+
+
+
+    <div >
+        <input  type="password" placeholder="password" formControlName="password" autocomplete="new-password">
+
+        <p>Must have one letter, and one number</p >
+        <div  *ngIf="password.invalid && password.touched" class="has-text-danger">
+            That password sucks...
+        </div >
+
+    </div >
+
+
+
+    <div >
+        <input  placeholder="age" [value]="0" formControlName="age">
+
+        <div  *ngIf="age.errors?.min && age.touched">
+            {{ age.errors.min.actual }} is young to use this app kiddo!
+        </div >
+
+        <div  *ngIf="age.errors?.max && age.touched">
+            {{ age.errors.max.actual }} is too you old to use this app gramps!
+        </div >
+
+    </div >
+
+
+
+    <input type="checkbox" formControlName="agree" >Are you sure?
+
+    <hr>
+
+    <button [disabled]="myForm.invalid || loading" >Let's Do it!</button>
+
+
+
+
+</form>
