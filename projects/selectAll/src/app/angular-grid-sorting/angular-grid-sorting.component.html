@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Grid Sorting</title>
+</head>
+
+<body>
+	<h2>Fund Performance</h2>
+	<table id="fundData" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th data-column="ticker" (click)="SortData('ticker')" [ngClass]="{'asc': sortColumn == 'ticker' && sortOrder == 'asc', 'desc': sortColumn == 'ticker' && sortOrder == 'desc'}">Ticker</th>
+				<th data-column="name" (click)="SortData('name')" [ngClass]="{'asc': sortColumn == 'name' && sortOrder == 'asc', 'desc': sortColumn == 'name' && sortOrder == 'desc'}">Fund Name</th>
+				<th data-column="asset class Name" (click)="SortData('asset class Name')" [ngClass]="{'asc': sortColumn == 'asset class Name' && sortOrder == 'asc', 'desc': sortColumn == 'asset class Name' && sortOrder == 'desc'}">Asset Class</th>
+				<th data-column="returns 1Y" (click)="SortData('returns 1Y')" [ngClass]="{'asc': sortColumn == 'returns 1Y' && sortOrder == 'asc', 'desc': sortColumn == 'returns 1Y' && sortOrder == 'desc'}">1Y</th>
+				<th data-column="returns 2Y" (click)="SortData('returns 2Y')" [ngClass]="{'asc': sortColumn == 'returns 2Y' && sortOrder == 'asc', 'desc': sortColumn == 'returns 2Y' && sortOrder == 'desc'}">2Y</th>
+				<th data-column="returns 3Y" (click)="SortData('returns 3Y')" [ngClass]="{'asc': sortColumn == 'returns 3Y' && sortOrder == 'asc', 'desc': sortColumn == 'returns 3Y' && sortOrder == 'desc'}">3Y</th>
+				<th data-column="returns 4Y" (click)="SortData('returns 4Y')" [ngClass]="{'asc': sortColumn == 'returns 4Y' && sortOrder == 'asc', 'desc': sortColumn == 'returns 4Y' && sortOrder == 'desc'}">4Y</th>
+				<th data-column="returns 5Y" (click)="SortData('returns 5Y')" [ngClass]="{'asc': sortColumn == 'returns 5Y' && sortOrder == 'asc', 'desc': sortColumn == 'returns 5Y' && sortOrder == 'desc'}">5Y</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let objs of performanceData">
+				<td>
+          {{objs.ticker}}
+				</td>
+        <td>
+          {{objs.name}}
+				</td>
+        <td>
+          {{objs['asset class Name']}}
+				</td>
+        <td>
+          {{objs['returns 1Y']}}
+				</td>
+        <td>
+          {{objs['returns 2Y']}}
+				</td>
+        <td>
+          {{objs['returns 3Y']}}
+				</td>
+        <td>
+          {{objs['returns 4Y']}}
+				</td>
+        <td>
+          {{objs['returns 5Y']}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>

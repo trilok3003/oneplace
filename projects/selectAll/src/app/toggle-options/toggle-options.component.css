@@ -1,0 +1,25 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    width:50%;
+    margin: 0 auto;
+    text-align:center;
+    cursor:pointer;
+  }
+  .heading {
+    padding:20px;
+    background-color: #7ed6df;
+  }
+  .content {
+    background-color: #dff9fb;
+    height:0;
+    opacity:0;
+    line-height:100px;
+  }
+  
+  .container.active .content {
+     height:100px;
+    opacity:1;
+  }
+  

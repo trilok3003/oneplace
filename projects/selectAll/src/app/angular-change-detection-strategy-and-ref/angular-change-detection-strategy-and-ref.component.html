@@ -1,0 +1,7 @@
+<h3>Change Detection on demand</h3>
+<h4>Parent Component to add fruits</h4>
+
+<input placeholder="Enter a fruit name" #fruitInput type="text" required>
+<button type="button" (click)="AddFruit(fruitInput.value)">Add</button>
+<div *ngFor="let fruit of fruits; let i = index;">{{i+1}} {{fruit}}</div>
+<child [fruits]="fruits"></child>
