@@ -1,0 +1,15 @@
+p {
+    font-family: Lato;
+  }
+  
+  div, span{
+    padding:10px;
+    margin:10px;
+  }
+  span {
+    border:1px solid #BBB;
+  }
+  
+  .red-border {
+    border-color:Red;
+  }

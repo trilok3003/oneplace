@@ -1183,6 +1183,124 @@
           }
         }
       }
+    },
+    "practicles": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/practicles",
+      "sourceRoot": "projects/practicles/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/practicles",
+            "index": "projects/practicles/src/index.html",
+            "main": "projects/practicles/src/main.ts",
+            "polyfills": "projects/practicles/src/polyfills.ts",
+            "tsConfig": "projects/practicles/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/practicles/src/favicon.ico",
+              "projects/practicles/src/assets"
+            ],
+            "styles": [
+              "projects/practicles/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/practicles/src/environments/environment.ts",
+                  "with": "projects/practicles/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "practicles:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "practicles:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "practicles:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/practicles/src/test.ts",
+            "polyfills": "projects/practicles/src/polyfills.ts",
+            "tsConfig": "projects/practicles/tsconfig.spec.json",
+            "karmaConfig": "projects/practicles/karma.conf.js",
+            "assets": [
+              "projects/practicles/src/favicon.ico",
+              "projects/practicles/src/assets"
+            ],
+            "styles": [
+              "projects/practicles/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/practicles/tsconfig.app.json",
+              "projects/practicles/tsconfig.spec.json",
+              "projects/practicles/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/practicles/e2e/protractor.conf.js",
+            "devServerTarget": "practicles:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "practicles:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "MultipleApps"
 }
