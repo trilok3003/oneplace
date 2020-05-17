@@ -1,0 +1,22 @@
+<p class="mt-4">List of fruits available</p>
+
+<button (click)="ShowNextFruit()">Show Next Fruit</button>
+<button (click)="AddFruit()">Add Fruit</button>
+<table>
+<tr>
+  <th>
+    Name
+    </th>
+    <th>
+      Rate
+    </th>
+  </tr>
+  <tr>
+    <td>
+      {{currFruit.name}}
+    </td>
+    <td>
+      {{currFruit.rate}}
+    </td>
+  </tr>
+  </table>
