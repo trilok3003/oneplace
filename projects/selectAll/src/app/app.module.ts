@@ -22,6 +22,14 @@ import { AngularChangeDetectionStrategyAndRefComponent } from './angular-change-
 import { ChildComponent } from './angular-change-detection-strategy-and-ref/child/child.component';
 import { AngularGridSortingComponent } from './angular-grid-sorting/angular-grid-sorting.component';
 import { NfElseComponent } from './nf-else/nf-else.component';
+import { AngularStaggeredAnimationsComponent } from './angular-staggered-animations/angular-staggered-animations.component';
+import { AngularStaggeredAnimations1Component } from './angular-staggered-animations1/angular-staggered-animations1.component';
+import { AngularRoutesAnimationsComponent } from './angular-routes-animations/angular-routes-animations.component';
+import { LeftComponent } from './angular-routes-animations/left/left.component';
+import { CenterComponent } from './angular-routes-animations/center/center.component';
+import { RightComponent } from './angular-routes-animations/right/right.component';
+import { AngularListenToWindowComponent } from './angular-listen-to-window/angular-listen-to-window.component';
+import { TemplateReferenceVariableInsideNgifComponent } from './template-reference-variable-inside-ngif/template-reference-variable-inside-ngif.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,15 @@ import { NfElseComponent } from './nf-else/nf-else.component';
     AngularChangeDetectionStrategyAndRefComponent,
     ChildComponent,
     AngularGridSortingComponent,
-    NfElseComponent
+    NfElseComponent,
+    AngularStaggeredAnimationsComponent,
+    AngularStaggeredAnimations1Component,
+    AngularRoutesAnimationsComponent,
+    LeftComponent,
+    CenterComponent,
+    RightComponent,
+    AngularListenToWindowComponent,
+    TemplateReferenceVariableInsideNgifComponent
   ],
   imports: [
     BrowserModule,

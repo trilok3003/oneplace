@@ -1,0 +1,8 @@
+<div class="container1">
+    <div class="textBox">
+      <input type="text" (keyup.enter)="AddOption()" [(ngModel)]="optionVal">
+    </div>
+    <div class="options">
+      <div @fadeIn class="option1" *ngFor="let option of options" (click)="RemoveOption(option)">{{option}}</div>
+    </div>
+  </div>

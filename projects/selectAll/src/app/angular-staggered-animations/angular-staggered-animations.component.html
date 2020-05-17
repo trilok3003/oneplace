@@ -1,0 +1,7 @@
+<div class="container" @animate>
+	<h3>To Do Items</h3>
+	<input type="text" (keyup.enter)="AddListItem()" [(ngModel)]="textboxValue">
+<div *ngFor="let item of items" class="item">
+  <span (click)="RemoveItem(item)">{{item}}</span>
+  </div>
+</div>

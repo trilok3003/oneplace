@@ -24,6 +24,19 @@
 <app-angular-grid-sorting></app-angular-grid-sorting>
 <hr>
 <app-nf-else></app-nf-else>
+<hr>
+<app-angular-staggered-animations></app-angular-staggered-animations>
+<hr>
+<app-angular-staggered-animations1></app-angular-staggered-animations1>
+<hr>
+<app-angular-listen-to-window></app-angular-listen-to-window>
+<hr>
+<app-template-reference-variable-inside-ngif></app-template-reference-variable-inside-ngif>
 </div>
 
+<div class="nav">
+  <div class="navItem active" (click)="RouteTo('Left')" [class.active]="_route.url == '/Left'">Left</div>
+  <div class="navItem" (click)="RouteTo('Center')" [class.active]="_route.url == '/Center'">Center</div>
+  <div class="navItem" (click)="RouteTo('Right')" [class.active]="_route.url == '/Right'">Right</div>
+</div>
 <router-outlet></router-outlet>
