@@ -1,0 +1,11 @@
+<app-tabs>
+  <app-tab [details]="homeTab">
+    <p>Lorem ipsum dolor sit amet</p>
+  </app-tab>
+  <app-tab [details]="worldTab">
+    <em>Elementum enim at suscipit.</em>
+    <p>
+      <a (click)="i = i + 1">counter: {{i || 0}}</a>
+    </p>
+  </app-tab>
+</app-tabs>

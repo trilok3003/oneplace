@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let pane of panes" >
+      <a class="nav-link" [ngClass]="{active:pane.selected}" (click)="select(pane)">{{pane.title}}</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <ng-content></ng-content>
+  </div>
