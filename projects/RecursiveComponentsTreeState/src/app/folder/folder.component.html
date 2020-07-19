@@ -1,0 +1,50 @@
+<header class="header">
+	<a (click)="toggleFolder( folder )">
+		<!-- <i class="fa fa-plus" aria-hidden="true" *ngIf="!isExpanded"></i>
+		<i class="fa fa-minus" aria-hidden="true" *ngIf="isExpanded"></i> -->
+
+		<i class="fa fa-plus-square" aria-hidden="true"  *ngIf="!isExpanded"></i>
+		<i class="fa fa-minus-square" aria-hidden="true"  *ngIf="isExpanded"></i>
+<!-- 
+		<i class="fa fa-chevron-down" aria-hidden="true" *ngIf="!isExpanded"></i>
+		<i class="fa fa-chevron-right" aria-hidden="true" *ngIf="isExpanded"></i> -->
+
+		<!-- <i class="fa fa-folder" aria-hidden="true" *ngIf="!isExpanded"></i> -->
+		<span>
+			{{ folder.name }}
+		</span>
+ 
+	</a>
+</header>
+ 
+<section *ngIf="isExpanded" class="tree">
+ 
+	<!-- Sub-folders. -->
+	<ul *ngIf="folder.folders.length">
+		<li *ngFor="let subfolder of folder.folders">
+			<app-folder
+				[folder]="subfolder"
+				[expandedFolders]="expandedFolders"
+				(toggleFolder)="toggleFolder( $event )">
+			</app-folder>
+ 
+		</li>
+	</ul>
+ 
+	<!-- Files. -->
+	<ul *ngIf="folder.files.length">
+		<li *ngFor="let subfile of folder.files">
+ 
+			{{ subfile.name }}
+ 
+		</li>
+	</ul>
+ 
+	<!-- If there are NO folders and NO files, show an empty message. -->
+	<ng-template [ngIf]="( ! folder.folders.length && ! folder.files.length )">
+		<em class="empty">
+			Folder is empty.
+		</em>
+	</ng-template>
+ 
+</section>

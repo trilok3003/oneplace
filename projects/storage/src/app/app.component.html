@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div class="container mt-2">
+  <div class="form-group">
+    <input class="form-control" placeholder="key" [(ngModel)]="key">
+    <input class="form-control" placeholder="value" [(ngModel)]="value">
+    <button class="btn btn-primary btn-sm mt-2" (click)="add()">Add</button>
+  </div>
+  <div>
+ {{getStorage() | json}}
+ <table class="table">
+   <thead>
+     <tr>
+       <th>key</th>
+       <th>value</th>
+       <th>action</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let item of getStorage()">
+       <td>{{item?.key}}</td>
+       <td>{{item?.value}}</td>
+       <td>
+         <button class="btn btn-sm btn-danger" (click)="storageService.clear(item.key)">X</button>
+       </td>
+     </tr>
+   </tbody>
+ </table>
+  </div>
+</div>

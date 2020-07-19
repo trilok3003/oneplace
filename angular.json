@@ -1328,9 +1328,6 @@
             ],
             "styles": [
               "projects/responsive/src/styles.scss"
-              // "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
-              // "node_modules/bootstrap/dist/css/bootstrap-grid.css",
-              // "src/styles.scss"
             ],
             "scripts": []
           },
@@ -1662,6 +1659,246 @@
           }
         }
       }
-    }},
-  "defaultProject": "MultipleApps"
+    },
+    "storage": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/storage",
+      "sourceRoot": "projects/storage/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/storage",
+            "index": "projects/storage/src/index.html",
+            "main": "projects/storage/src/main.ts",
+            "polyfills": "projects/storage/src/polyfills.ts",
+            "tsConfig": "projects/storage/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/storage/src/favicon.ico",
+              "projects/storage/src/assets"
+            ],
+            "styles": [
+              "projects/storage/src/styles.css",
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/storage/src/environments/environment.ts",
+                  "with": "projects/storage/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "storage:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "storage:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "storage:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/storage/src/test.ts",
+            "polyfills": "projects/storage/src/polyfills.ts",
+            "tsConfig": "projects/storage/tsconfig.spec.json",
+            "karmaConfig": "projects/storage/karma.conf.js",
+            "assets": [
+              "projects/storage/src/favicon.ico",
+              "projects/storage/src/assets"
+            ],
+            "styles": [
+              "projects/storage/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/storage/tsconfig.app.json",
+              "projects/storage/tsconfig.spec.json",
+              "projects/storage/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/storage/e2e/protractor.conf.js",
+            "devServerTarget": "storage:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "storage:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "RecursiveComponentsTreeState": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/RecursiveComponentsTreeState",
+      "sourceRoot": "projects/RecursiveComponentsTreeState/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/RecursiveComponentsTreeState",
+            "index": "projects/RecursiveComponentsTreeState/src/index.html",
+            "main": "projects/RecursiveComponentsTreeState/src/main.ts",
+            "polyfills": "projects/RecursiveComponentsTreeState/src/polyfills.ts",
+            "tsConfig": "projects/RecursiveComponentsTreeState/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/RecursiveComponentsTreeState/src/favicon.ico",
+              "projects/RecursiveComponentsTreeState/src/assets"
+            ],
+            "styles": [
+              "projects/RecursiveComponentsTreeState/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/RecursiveComponentsTreeState/src/environments/environment.ts",
+                  "with": "projects/RecursiveComponentsTreeState/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "RecursiveComponentsTreeState:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "RecursiveComponentsTreeState:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "RecursiveComponentsTreeState:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/RecursiveComponentsTreeState/src/test.ts",
+            "polyfills": "projects/RecursiveComponentsTreeState/src/polyfills.ts",
+            "tsConfig": "projects/RecursiveComponentsTreeState/tsconfig.spec.json",
+            "karmaConfig": "projects/RecursiveComponentsTreeState/karma.conf.js",
+            "assets": [
+              "projects/RecursiveComponentsTreeState/src/favicon.ico",
+              "projects/RecursiveComponentsTreeState/src/assets"
+            ],
+            "styles": [
+              "projects/RecursiveComponentsTreeState/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/RecursiveComponentsTreeState/tsconfig.app.json",
+              "projects/RecursiveComponentsTreeState/tsconfig.spec.json",
+              "projects/RecursiveComponentsTreeState/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/RecursiveComponentsTreeState/e2e/protractor.conf.js",
+            "devServerTarget": "RecursiveComponentsTreeState:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "RecursiveComponentsTreeState:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "MultipleApps",
+  "cli": {
+    "analytics": "00e009ac-a5a7-4045-ae2e-d4d702045f0c"
+  }
 }
