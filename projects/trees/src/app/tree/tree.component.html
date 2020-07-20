@@ -1,0 +1,9 @@
+
+
+    <ul>
+		<li  *ngFor="let node of nodes">
+			<a href="#">{{node?.name}}</a>
+		<app-tree [nodes]="node?.nodes" *ngIf="node?.nodes.length > 0"></app-tree>
+		</li>
+	</ul>
+	
