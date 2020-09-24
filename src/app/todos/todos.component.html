@@ -28,7 +28,7 @@
                         <h4 class="card-title">Todo list</h4>
                         <div class="add-items d-flex">
                             <input type="text" class="form-control todo-list-input"
-                                placeholder="What do you need to do today?" [(ngModel)]="task">
+                                placeholder="What do you need to do today?" [(ngModel)]="task" (keyup.enter)="addTodo()">
                             <button class="add btn btn-primary font-weight-bold todo-list-add-btn"
                                 (click)="addTodo()">Add</button> </div>
                         <div class="list-wrapper">
@@ -41,6 +41,7 @@
                             <div class="col-4">
                                 <select class="form-control float-right" [(ngModel)]="searchCompleted" (ngModelChange)="onFilterTodo()">
                                 <option disabled selected value="">Select Filter</option>
+                                <option value="">All</option>
                                 <option value="true">Completed</option>
                                 <option value="false">In Completed</option>
                             </select>
