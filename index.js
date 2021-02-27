@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var appName = "rktech"
+var appName = "dist"
 app.use(express.static(appName))
 app.get('/', function (req, res,next) {
  res.redirect('/') 
