@@ -8,7 +8,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class TemplateReferenceVariableInsideNgifComponent implements OnInit {
   show: boolean = false;
   private spnRed: ElementRef;
-  @ViewChild('spnRed')
+  @ViewChild('spnRed', {static: false})
   get SpnRed(): ElementRef {
     return this.spnRed;
   }

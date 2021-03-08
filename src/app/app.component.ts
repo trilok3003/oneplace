@@ -7,4 +7,50 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MultipleApps';
+  trees = [{
+    name: 'Parent',
+    nodes: [
+      {
+        name: 'child', nodes: [
+          {
+            name: 'grand child', nodes: [
+              { name: 'grand grand child', nodes: [] }
+            ]
+          },
+          {
+            name: 'grand child', nodes: [
+              { name: 'grand grand child', nodes: [] }
+            ]
+          },
+          {
+            name: 'grand child', nodes: [
+              { name: 'grand grand child', nodes: [] }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'child', nodes: [
+          {
+            name: 'grand child', nodes: [
+              { name: 'grand grand child', nodes: [] }
+            ]
+          },
+          {
+            name: 'grand child', nodes: [
+              { name: 'grand grand child', nodes: [] }
+            ]
+          },
+          {
+            name: 'grand child', nodes: [
+              { name: 'grand grand child', nodes: [
+              { name: 'grand grand grand child', nodes: [] }
+              ] }
+            ]
+          }
+        ]
+      },
+    ]
+  }
+  ];
 }
