@@ -1,0 +1,135 @@
+@import "partials/base";
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/utility";
+@import "partials/mixins";
+@import "partials/functions";
+@import "partials/placeholder";
+// .card {
+//     background: map-get($colors, red);
+//     width: 200px;
+//     height: 200px;
+//     padding: 15px;
+//     font-family: Arial, Helvetica, sans-serif;
+//     .heading {
+//         color: $white-color;
+//         font-size: 18px;
+//     }
+//     p {
+//         color: #ddd;
+//         font-size: 12px;
+//     }
+//     a {
+//         background: $success-color;
+//         color: $white-color;
+//         font-size: 12px;
+//         text-decoration: none;
+//         padding: 9px 12px;
+//         border-radius: 5px;
+//         display: inline-block;
+//         &:hover {
+//             background: darken($success-color, 15%);
+//             // background: lighten($success-color, 15%);
+//         }
+//     }
+   
+// }
+.card-red {
+    @include card(map-get($colors, red), $white-color, map-get($colors, green));
+}
+.card-green {
+    @include card(map-get($colors, green), $white-color, map-get($colors, red));
+}
+.card-yellow {
+    @include card(map-get($colors, yellow), $white-color, map-get($colors, green));
+}
+.card-pink {
+   @extend .card-red;
+   width: 400px;
+}
+
+.box-card {
+  @extend %box;
+}
+.btn {
+    padding: 7px 12px;
+    color: rgb(221, 34, 34);
+    border: 1px solid #fff;
+    background: hotpink;
+    border-radius: 5px;
+}
+.desktop {
+background: desktopImage('profile.jpeg');
+}
+.mobile {
+    background: mobileImage('profile.jpeg');
+    }
+    // interpolation
+ .margin-right {
+     @include gap(right, 100, margin)
+ }
+ .padding-right {
+    @include gap(right, 100, padding)
+}
+.mystyle1 {
+    @include myStyle(120);
+}
+.mystyle2 {
+    @include myStyle(21);
+}
+.mystyle3 {
+    @include myStyle(12);
+}
+// for loop 1st way
+@for $i from 1 through 3 {
+    .row-#{$i * 100} {
+        width: #{$i * 100}px;
+        background: darken(red, $i * 10%);
+    }
+} 
+// for loop 2nd way
+@for $i from 1 to 3 {
+    .col-#{$i * 100} {
+        width: #{$i * 100}px;
+        background: darken(red, $i * 10%);
+    }
+} 
+
+// for loop 
+@for $i from 1 through 4 {
+    .gap-left-#{$i} {
+      margin-left: $i * 100px;
+    }
+} 
+// for loop like bootstrap
+@for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: $i * 8%;
+    }
+} 
+
+// each loop
+$devices: desktop, tablet, mobile;
+
+@each $device in $devices {
+    .#{$device} {
+        background: black;
+    }
+}
+// each loop key value pair
+$devices: (desktop: 50px, tablet: 25px, mobile:12px);
+
+@each $device, $fontSize in $devices {
+    .#{$device} {
+        background: black;
+        font-size: $fontSize;
+    }
+}
+// while loop
+// $i:1;
+// @while $i < 4 {
+//     .my {
+//         width: 100px;
+//     }
+//     $i: $i + 1;
+// }
