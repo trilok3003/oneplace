@@ -13,7 +13,7 @@ export class AddComponent implements OnInit {
     name: '',
     rate: 0
   }
-  @ViewChild('fruitForm') private fruitForm: NgForm;
+  @ViewChild('fruitForm', {static: false}) private fruitForm: NgForm;
   constructor(private _addFruit: InventoryService) { }
 
   AddFruit(): void {
