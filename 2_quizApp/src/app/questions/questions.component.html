@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col">
+    <form [formGroup]="form">
+      <label for="questions" class="h2">questions</label>
+      <ng-container *ngFor="let question of form?.controls['questions']?.controls; let i = index">
+        <div [formGroup]="question" class="row questions-update">
+          <div class="form-group col">
+            <label for="name">Question</label>
+            <textarea class="form-control" formControlName="question"></textarea>
+          </div>
+          <div class="form-group col" *ngFor="let opt of question.get('option').controls; let i = index">
+            <label for="name">Option {{i+1}}</label>
+            <input class="form-control" [formControl]="opt">
+          </div>
+          <div class="form-group col">
+            <label for="Answer">Select Answer</label>
+            <select formControlName="answer">
+              <option value="" disabled>Select</option>
+              <option *ngFor="let opt1 of [0,1,2,3]" [ngValue]="opt1">Option {{opt1 + 1}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <button class="btn btn-success" (click)="updateQuestion(i)">
+              <i class="material-icons prefix yellow-text" *ngIf="questionsFormArray.at(i).get('$key').value">
+                update
+              </i>
+              <i class="material-icons prefix yellow-text" *ngIf="!questionsFormArray.at(i).get('$key').value">
+                arrow_right
+              </i>
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-danger" (click)="removeQuestion(i)">
+              <i class="material-icons prefix red-text">delete</i>
+            </button>
+          </div>
+        </div>
+      </ng-container>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-success" (click)="addQuestion()" [disabled]="form.invalid">Add Question</button>
+        </div>
+      </div>
+    </form>
+    <!-- <form [formGroup]="form">
+      <div class="card blue-grey darken-1" *ngFor="let question of form?.controls['questions']?.controls; let i = index"
+        [formGroup]="question">
+
+        <div class="card-content white-text">
+          <div class="form-group col">
+            <label for="name">Question</label>
+            <input class="form-control" formControlName="question">
+          </div>
+        </div>
+        <div class="card-action">
+          <ul class="collection answer">
+            <ng-container>
+              <li class="collection-item">
+                {{i+1}}. <div class="form-group col">
+                  <label for="amount">Answer</label>
+                  <input class="form-control" formControlName="answer" type="number">
+                </div>
+              </li>
+            </ng-container>
+
+          </ul>
+        </div>
+
+
+      </div>
+    </form> -->
+
+  </div>
+
+</div>

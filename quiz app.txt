@@ -1,0 +1,6 @@
+Angular6
+firebase
+materilise css,
+materilise js,
+jquery,
+materilise font icons,

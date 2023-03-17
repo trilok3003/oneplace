@@ -1,0 +1,5 @@
+1>Angular 6
+2>https://bootswatch.com/ ....bootstrap themes
+3>https://getbootstrap.com/docs/4.1/getting-started/introduction/ ....... for bootstrap css
+4>https://console.firebase.google.com/project/amcrud-bd244/database/amcrud-bd244/data
+  npm install i -s firebase angularfire2
