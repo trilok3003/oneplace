@@ -1,0 +1,7 @@
+.questions-add{
+    display: flex;
+    flex-flow: column;
+}
+select{
+    display: block !important;
+}
