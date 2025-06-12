@@ -1,0 +1,25 @@
+<div fxShow="{{!showmenu.visible}}">
+	<div color="primary" fxLayoutAlign="space-between end" style="height: 5vh;">
+		<button (click)="logout()"><span class="m1">Log Out</span></button>
+	</div>
+</div>
+
+
+<div>
+	<div fxShow="{{!showmenu.visible}}">
+		<div class="basic" color="basic">
+
+			<!-- The following menu items will be hidden on both SM and XS screen sizes -->
+			<div>
+
+				<button mat-raised-button routerLink='/application/home' routerLinkActive="active">Home </button>
+
+				<button *ngIf="userType === 'admin'" mat-raised-button routerLink='application/AdminAccess/admin-activity' routerLinkActive="active">Admin Activity </button>
+
+				<button *ngIf="userType === 'user'" mat-raised-button routerLink='application/UserManagement/add-users' routerLinkActive="active">Register User</button>
+
+			</div>
+		</div>
+	</div>
+</div>
+<router-outlet></router-outlet>
