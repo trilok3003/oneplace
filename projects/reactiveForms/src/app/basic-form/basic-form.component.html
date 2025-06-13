@@ -1,0 +1,23 @@
+<form [formGroup]="myForm">
+
+    Value: {{ myForm.value | json }}
+
+    <hr>
+
+    <div >
+        <input  placeholder="email" formControlName="email">
+    </div >
+
+    <div >
+        <textarea  placeholder="your message..." formControlName="message"></textarea>
+    </div >
+
+    <div >
+        <select formControlName="career" placeholder="career">
+            <option value="Magician">Magician</option>
+            <option value="Clown">Clown</option>
+            <option value="Juggler">Juggler</option>
+        </select>
+    </div >
+
+</form>

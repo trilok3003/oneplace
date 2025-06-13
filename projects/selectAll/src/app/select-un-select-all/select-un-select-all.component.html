@@ -1,0 +1,9 @@
+{{title}}
+  <ul class="list-group">
+  <li class="list-group-item"> <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();"/>
+  </li>
+  <li *ngFor="let n of names" class="list-group-item"> 
+  <input type="checkbox" [(ngModel)]="n.selected" (change)="checkIfAllSelected();" >
+  {{n.name}}
+  </li>
+</ul>

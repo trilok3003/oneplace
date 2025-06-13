@@ -1,0 +1,15 @@
+.nav {
+    display:flex;
+  
+  }
+  .navItem {
+    flex:1;
+    text-align:Center;
+    padding:20px 0px;
+    background-color:#B0BEC5;
+    cursor:pointer;
+  }
+  .navItem.active {
+    background-color:#263238;
+    color:#FFF;
+  }

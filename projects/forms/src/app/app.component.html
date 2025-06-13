@@ -1,0 +1,144 @@
+<div class="jumbotron">
+	<div class="container">
+
+		<div *ngIf="f.submitted && firstName.invalid">
+			<div *ngIf="firstName.errors.required">First Name is required</div>
+		</div>
+		<div *ngIf="f.submitted && email.invalid">
+			<div *ngIf="email.errors.required">Email is required</div>
+			<div *ngIf="email.errors.email">Email must be a valid email address</div>
+		</div>
+
+		<div *ngIf="f.submitted && phoneno.invalid">
+			<div *ngIf="phoneno.errors.required">Phoneno is required</div>
+		</div>
+
+		<div *ngIf="country.invalid && f.submitted">
+			<span style="color: red;">Please Select Country.</span>
+</div>  
+<div *ngIf="hosting.invalid && f.submitted">
+			<span style="color: red;">Please Select Hosting.</span>
+</div>  
+<div *ngIf="colors.invalid && f.submitted">
+			<span style="color: red;">Please Select Colors.</span>
+</div> 
+<div *ngIf="zip1.invalid && f.submitted">
+			<span style="color: red;">Zip 1 is required.</span>
+</div> 
+<div *ngIf="zip2.invalid && f.submitted">
+			<span style="color: red;">Zip 2 is required.</span>
+</div> 
+  
+<div class="row">
+ <div class="col-md-8 offset-md-2">
+ 
+<form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
+
+ <div class="form-group">
+  <label for="firstName">First Name</label>
+	<app-textbox type="text" name="firstName" [(ngModel)]="model.firstName" [(inputModel)]="model.firstName" #firstName="ngModel" required></app-textbox> 
+ </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <app-textbox type="text" name="email" [(ngModel)]="model.email" [(inputModel)]="model.email" #email="ngModel" required email></app-textbox> 
+  </div>
+
+   <div class="form-group">
+    <label for="phoneno">Phone No</label>
+    <app-textbox type="text" name="phoneno" [(ngModel)]="model.phoneno" [(inputModel)]="model.phoneno" #phoneno="ngModel" required ></app-textbox> 
+  </div>
+
+  <div class="form-group">
+    <label for="phoneno">Zip Code</label>
+       <div class='row'>
+            <div class='col-sm-6'>
+                <div class='form-group'>
+                    
+                    <app-textbox type="text" name="zip1" [(ngModel)]="model.zip1" [(inputModel)]="model.zip1" #zip1="ngModel" required placeholder="xxxx"></app-textbox> 
+
+                </div>
+            </div>
+            <div class='col-sm-6'>
+                <div class='form-group'>
+                    <app-textbox type="text" name="zip2" [(ngModel)]="model.zip2" [(inputModel)]="model.zip2" #zip2="ngModel" required placeholder="yyyy"></app-textbox> 
+                </div>
+            </div>
+        </div>
+</div>  
+ 
+    <div class="form-group">
+    <label for="country">Country</label>
+ 
+
+ <app-selectbox   name="country" [(inputModel)]="model.country" [(ngModel)]="model.country" #country="ngModel"   required>
+    <option [ngValue]="null">---Select---</option>
+    <option *ngFor="let item of stateData" [value]="item">
+      {{item}}
+    </option>
+  </app-selectbox>
+
+   
+   
+   </div>
+   
+<!-- radio checks -->
+   <div class="form-group">
+                        <label class="col-md-4 control-label">Do you have hosting?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                              <app-radiobtn type="radio" name="hostingYes" value="yes"
+                                    
+                                    [(ngModel)]="model.hosting"  
+              required   #hosting="ngModel" [(inputModel)]="model.hosting"> </app-radiobtn>
+                                <label for="hostingYes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio"><app-radiobtn type="radio" name="hosting" value="no"
+                                    
+                                    [(ngModel)]="model.hosting"  
+              required   #hosting="ngModel" [(inputModel)]="model.hosting"></app-radiobtn>
+                                <label for="hostingNo">
+                                 No
+                                </label> 
+                            </div>
+                        </div>
+    </div>  
+<!-- checkbox checks -->
+   <div class="form-group">
+                        <label class="col-md-4 control-label">Select Colors</label>
+                        <div class="col-md-4">
+                            <div class="checkbox">
+                                <label>
+                                     <app-checkbox  [(ngModel)]="model.colors"  
+              required name="colors" #colors="ngModel" [(inputModel)]="model.colors"></app-checkbox>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <app-checkbox   [(ngModel)]="model.colors"  
+              required name="colors" #colors="ngModel"  [(inputModel)]="model.colors"></app-checkbox>
+                                </label>
+                            </div>
+                        </div>
+    </div>  
+ 
+
+
+  
+
+	<div class="form-group">
+		<button class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+
+          </div>
+        </div>
+    </div>
+</div>
+ 
+<p><span class="boldspan">Form data:</span>{{f.value | json}}</p>
+
+{{model.firstName}}
+<router-outlet></router-outlet>

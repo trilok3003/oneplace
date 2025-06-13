@@ -1,0 +1,14 @@
+<div class="card mt-2">
+    <div class="card-header">
+        <ng-content select=".header"></ng-content>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+      <ng-content select=".body-title"></ng-content>
+      </h5>
+      <ng-content select=".body"></ng-content>
+    </div>
+    <div class="card-footer">
+        <ng-content select=".footer"></ng-content>
+    </div>
+  </div>

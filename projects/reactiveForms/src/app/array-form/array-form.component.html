@@ -1,0 +1,38 @@
+<form [formGroup]="myForm">
+
+    Value: {{ myForm.value | json }}
+
+    <hr>
+
+    <div class="full">
+        <input  placeholder="email" formControlName="email">
+    </div >
+
+    <div formArrayName="phones">
+
+        <div *ngFor="let phone of phoneForms.controls; let i=index" [formGroupName]="i">
+
+
+            <div class="xs">
+                <input  placeholder="area" formControlName="area">
+            </div >
+
+            <div class="xs">
+                <input  placeholder="prefix" formControlName="prefix">
+            </div >
+
+            <div class="sm">
+                <input  placeholder="line" formControlName="line">
+            </div >
+
+            <button  (click)="deletePhone()">Delete</button>
+
+        </div>
+
+    </div>
+
+    <button (click)="addPhone()">Add Phone Number</button>
+
+
+
+</form>

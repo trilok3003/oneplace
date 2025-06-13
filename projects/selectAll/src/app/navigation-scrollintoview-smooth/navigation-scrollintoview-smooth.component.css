@@ -1,0 +1,30 @@
+.custom-nav {
+    position:fixed;
+    display: flex;
+    background-color: #535c68;
+    color:#fff;
+    width:100%;
+    text-align: center;
+  }
+  .custom-nav div {
+    flex:1;
+    padding:10px 0px;
+    cursor:pointer;
+  }
+  .custom-container:nth-child(1) {
+    background-color: #ff7979;
+  }
+  .custom-container:nth-child(2) {
+    background-color: #badc58;
+  }
+  .custom-container:nth-child(3) {
+    background-color: #686de0;
+  }
+  .custom-container{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    letter-spacing: 20px;
+  }
+  

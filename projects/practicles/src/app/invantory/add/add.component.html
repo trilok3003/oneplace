@@ -1,0 +1,8 @@
+<form #fruitForm="ngForm" (submit)="AddFruit()">
+	<input name="fruitName" type="textbox" [(ngModel)]="fruit.name">
+<input name="fruitRate" type="textbox" [(ngModel)]="fruit.rate">
+<button>
+  Add Fruit
+  </button>
+  <a routerLink="/">Go Back</a>
+  </form>

@@ -1,0 +1,10 @@
+<ng-container *ngIf="(stocks$ | async) as stocks;else elseBlock">
+    <ng-container *ngIf="stocks.length > 0;else noItems">
+    <p>Symbols are</p>
+      <div *ngFor="let stock of stocks">
+          {{stock.symbol}}
+      </div>
+    </ng-container>
+    <ng-template #noItems>No items present</ng-template>
+  </ng-container>
+  <ng-template #elseBlock>Loading items</ng-template>

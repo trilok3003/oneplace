@@ -1,0 +1,5 @@
+<h3>Template Reference Variable inside *ngIf Structural Directive</h3>
+<button type="button" (click)="ShowButton()">{{show ? 'Hide' : 'Show'}}</button>
+<div *ngIf="show">
+  <span #spnRed>The colour of this span is changed to red if it is visible</span>
+</div>

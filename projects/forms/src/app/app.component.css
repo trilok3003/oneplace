@@ -1,0 +1,13 @@
+.box {
+    float: left;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    clear: both;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  

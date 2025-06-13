@@ -1,0 +1,13 @@
+<p class="toggles">
+			<a (click)="expandAll()" class="toggle">Expand All</a>
+			&mdash;
+			<a (click)="collapseAll()" class="toggle">Collapse All</a>
+		</p>
+		<app-folder-tree
+			[rootFolder]="rootFolder"
+			[expandedFolders]="expandedFolders"
+			(toggleFolder)="toggleFolder( $event )">
+		</app-folder-tree> 
+		<hr>
+		<app-tree></app-tree>
+	

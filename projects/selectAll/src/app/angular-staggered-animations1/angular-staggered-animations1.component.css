@@ -1,0 +1,22 @@
+.container1{
+    position:relative;
+    width:200px;
+    margin:0 auto;
+    padding:20px;
+    background-color:rgba(34,88,200,0.1);
+  }
+  .option1 {
+    padding:10px;
+    text-align:center;
+    background-color:#0072bc;
+    color:#fff;
+    text-transform:uppercase;
+    margin:1px 0px;
+    cursor:pointer;
+    width:180px;
+  }
+  input[type="text"] {
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+  }

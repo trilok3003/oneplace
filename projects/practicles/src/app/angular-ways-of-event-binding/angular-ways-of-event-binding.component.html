@@ -1,0 +1,11 @@
+<div>
+	<h3>Click on the elements to see the color change.</h3>
+	<p>The first element uses HostListener and Host Binding in a directive</p>
+	<p>The second element uses addeventlistener</p>
+	<p>The third element uses event binding</p>
+  <p>The fourth element uses new Renderer2 listen</p>
+</div>
+<span changeColor>Click ME!</span>
+<span #secondElem>Click ME!</span>
+<span #thirdElem (click)="AddRedBorder()">Click ME!</span>
+<span #fourthElem>Click ME!</span>

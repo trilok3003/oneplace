@@ -1,0 +1,6 @@
+<div *ngFor="let fruit of fruits">
+	<div class="container" [class.active]="fruit.active" (click)="fruit.active = ! fruit.active">
+		<div class="heading">{{fruit.name}}</div>
+		<div class="content" [@animate]="fruit.active ? 'active' : 'notactive'">{{fruit.color}}</div>
+	</div>
+</div>

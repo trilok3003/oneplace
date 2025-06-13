@@ -1,0 +1,42 @@
+<app-navigation-scrollintoview-smooth></app-navigation-scrollintoview-smooth>
+<div class="container mt-2 mb-2">
+<hr>
+  <app-select-un-select-all></app-select-un-select-all>
+  <hr>
+  <app-auction-status></app-auction-status>
+  <hr>
+  <app-generic-pipe-accepting></app-generic-pipe-accepting>
+  <hr>
+  <app-angular-pipe-as-service></app-angular-pipe-as-service>
+  <hr>
+  <app-angular-cascaded-dropdown></app-angular-cascaded-dropdown>
+  <hr>
+  <app-toggle-options></app-toggle-options>
+  <hr>
+  <app-hostlistener-clicked-inside-outside></app-hostlistener-clicked-inside-outside>
+  <hr>
+  <app-hostlistener-as-directive></app-hostlistener-as-directive>
+  <hr>
+  <app-hostlistener-document-keyup-event></app-hostlistener-document-keyup-event>
+  <hr>
+  <app-angular-change-detection-strategy-and-ref></app-angular-change-detection-strategy-and-ref>
+<hr>
+<app-angular-grid-sorting></app-angular-grid-sorting>
+<hr>
+<app-nf-else></app-nf-else>
+<hr>
+<app-angular-staggered-animations></app-angular-staggered-animations>
+<hr>
+<app-angular-staggered-animations1></app-angular-staggered-animations1>
+<hr>
+<app-angular-listen-to-window></app-angular-listen-to-window>
+<hr>
+<app-template-reference-variable-inside-ngif></app-template-reference-variable-inside-ngif>
+</div>
+
+<div class="nav">
+  <div class="navItem active" (click)="RouteTo('Left')" [class.active]="_route.url == '/Left'">Left</div>
+  <div class="navItem" (click)="RouteTo('Center')" [class.active]="_route.url == '/Center'">Center</div>
+  <div class="navItem" (click)="RouteTo('Right')" [class.active]="_route.url == '/Right'">Right</div>
+</div>
+<router-outlet></router-outlet>
