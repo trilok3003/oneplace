@@ -1,0 +1,12 @@
+install
+...........
+npm install -g typescript
+
+Run and Compile: 
+.....................
+tsc app.ts // for single file
+tsc app.ts index.ts // for multiple file
+tsc *.ts // for all file
+tsc app.ts --watch // watcher all time
+
+
