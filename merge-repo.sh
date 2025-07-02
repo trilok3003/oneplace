@@ -19,6 +19,6 @@ fi
 
 # Merge the remote's master branch
 echo "🔀 Merging '$reponame/master' into current branch..."
-git merge "$reponame/master" --allow-unrelated-histories
+git merge "$reponame/main" --allow-unrelated-histories
 
 echo "✅ Merge complete."
