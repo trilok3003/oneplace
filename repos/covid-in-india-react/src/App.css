@@ -1,0 +1,18 @@
+h1, p {
+  font-family: Lato;
+}
+
+.todo {
+  display: block;
+  cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #d8d8d8;
+}
+
+input[type=text] {
+  padding:10px;
+  border-collapse: collapse;
+}
