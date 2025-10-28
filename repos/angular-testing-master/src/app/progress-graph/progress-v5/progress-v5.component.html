@@ -1,0 +1,7 @@
+<div class="bar">
+    <div class="BarChart" *ngFor="let d of data">
+        <div class="BarData" [ngStyle]="{background: d.color}" [style.height.%]="d.percent">
+            <p class="PercentText">{{d.percent + '%'}}</p>
+        </div>
+    </div>
+    </div>

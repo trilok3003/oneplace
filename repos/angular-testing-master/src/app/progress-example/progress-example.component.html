@@ -1,0 +1,26 @@
+<hr>
+<app-progress-v2></app-progress-v2>
+<hr>
+<app-progress-v1></app-progress-v1>
+<hr>
+<h1>Accessibility Example</h1>
+<label>
+  Enter an example progress value
+  <input type="number" min="0" max="100"
+      [value]="progress" (input)="progress = $event.target.value">
+</label>
+
+<app-progress-v3 [value]="progress" aria-label="Example of a progress bar">
+</app-progress-v3>
+<hr>
+<app-progress-v4></app-progress-v4>
+<hr>
+<app-progress-v5></app-progress-v5>
+<hr>
+<h3>Static</h3>
+<app-progress-v6 [value]="75"></app-progress-v6>
+
+<br>
+
+<h3>Dynamic</h3>
+<app-progress-v6 [value]="progress1 | async"></app-progress-v6> 

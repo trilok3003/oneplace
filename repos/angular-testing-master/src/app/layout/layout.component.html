@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light navbar-expand-lg fixed-top justify-content-between navbar-home">
+    <a class="navbar-brand-logo d-none d-sm-none d-md-block d-lg-block d-xl-block"><img src="assets/logo.png"
+            alt="Company logo" /></a>
+    <button class="navbar-toggler" type="button">
+        <span><i class="fas fa-bars"></i></span>
+    </button>
+    <!-- <div>
+        <div class="navbar-text ml-auto">
+            <a href="#" class="btn btn-outline-orange btn-log-out rounded-0">Logout</a>
+        </div>
+    </div> -->
+</nav>
+
+<section>
+    <div class="main-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 col-xl-2 p-0 sidebar position-fixed">
+                    <!-- Sidebar-->
+                    <div class="collapse navbar-collapse d-md-block d-lg-block sidebar-bg" id="navbarSupportedContent">
+                        <a class="navbar-brand-logo d-block d-sm-block d-md-none d-lg-none d-xl-none"><img
+                                src="assets/home.png" alt="Company logo" /></a>
+                        <nav class="">
+                            <div>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item" *ngFor="let item of menus; let i =index">
+                                        <a class="nav-link"  [routerLink]="item?.path" routerLinkActive="active">
+                                            <img src="assets/home.png" alt="" />
+                                            {{item?.name}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <!-- <div class="nav-footer m-4">
+                            <h4 class="text-center">
+                                Copyright ©2020M<br>
+                                <span>Tri</span><br>
+                                Service Satisfaction Success.<br>
+                                All rights reserved.
+                            </h4>
+                        </div> -->
+                    </div>
+                    <!-- sidebar end -->
+                </div>
+                <div class="col-sm-12 col-md-9 col-lg-10 col-xl-10 offset-md-3 offset-lg-2 offset-xl-2 mt-4">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

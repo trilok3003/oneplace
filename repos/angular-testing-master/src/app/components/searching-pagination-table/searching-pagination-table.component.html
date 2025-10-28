@@ -1,0 +1,43 @@
+<div class="container card">
+    <div class="row">
+        <div class="col-lg-12">
+            <label for="">Searching and pagination demo</label>
+            <div style="float:right">
+                <input type="text" placeholder="search by name" #searchVal (keyup)="search(searchVal.value)">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Id</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>contact No</th>
+                    <th>Address</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList; index as i">
+                        <td *ngIf="i >= firstItemIndex && i < lastItemIndex">{{user.id}}</td>
+                        <td *ngIf="i >= firstItemIndex && i < lastItemIndex">{{user.userName}}</td>
+                        <td *ngIf="i >= firstItemIndex && i < lastItemIndex">{{user.email}}</td>
+                        <td *ngIf="i >= firstItemIndex && i < lastItemIndex">{{user.contactNo}}</td>
+                        <td *ngIf="i >= firstItemIndex && i < lastItemIndex">{{user.address}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div style="float:right">
+                                <div class="btn btn-sm btn-light" (click)="onPreviousPageClick($event)">
+                                    < </div>
+                                        <div class="btn btn-sm btn-light" (click)="onNextPageClick($event)">
+                                            >
+                                        </div>
+                                </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

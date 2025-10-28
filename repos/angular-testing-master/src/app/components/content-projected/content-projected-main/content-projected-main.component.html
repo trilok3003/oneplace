@@ -1,0 +1,21 @@
+<div>
+    <ng-content></ng-content>
+</div>
+<div>
+    <b> First content</b>
+    <ng-content select=".first"></ng-content>
+</div>
+<div>
+    <b>Secondary content:</b>
+    <ng-content select="[secondary]"></ng-content>
+</div>
+
+<div>
+    <b>Div content: </b>
+    <ng-content select="div"></ng-content>
+</div>
+
+<div>
+    <b>projected content: </b>
+    <ng-content select="custom"></ng-content>
+</div>

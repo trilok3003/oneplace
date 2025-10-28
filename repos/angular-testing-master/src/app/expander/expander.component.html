@@ -1,0 +1,8 @@
+<div class="header" (click)="toggleExpand()">
+    {{heading}}
+    <i *ngIf="!expanded" class="fas fa-chevron-down"></i>
+    <i *ngIf="expanded" class="fas fa-chevron-up"></i>
+</div>
+<div class="content" *ngIf="expanded">
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+</div>
