@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <style>
+        #drag-container div, #drop-container div{
+        display: flex;
+        width: 130px;
+        height: 130px;
+        /* background: #cccccc; */
+        }
+        #drop-container {
+            margin-top: 15px;
+            display: flex;
+        }
+        #drag-container {
+            display: flex;
+        }
+        .image-1 {
+        background: url("./1.jpg")
+        }
+        .image-2 {
+        background: url("./2.jpg")
+        }
+        #drop-container div {
+            border: 1px solid #cccccc;
+        }
+        #drop-container  .drop-select{
+            border: 1px dashed red;
+        }
+        .dragging {
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+    <section id="drag-container">
+       <div data-image ="image-1" class="image-1" draggable="true"></div>
+       <div data-image ="image-2" class="image-2" draggable="true"></div>
+    </section>
+    <section id="drop-container">
+        <div></div>
+        <div></div>
+    </section>
+</body>
+<script src="./index.js"></script>
+</html>
