@@ -1,0 +1,73 @@
+<app-pop-up [width]="40" [center]="false" *ngIf="isDeleteTodo" [isOpen]="isDeleteTodo">
+    <p>Are You Sure to Delete Todo ?</p>
+    <button type="button" class="btn btn-danger btn-sm" (click)="isDeleteTodo = false">No</button>
+    <button type="button" class="btn btn-primary btn-sm ml-1" (click)="removeTodoById(todoId)">Yes</button>
+</app-pop-up>
+<app-pop-up [width]="40" [center]="false" *ngIf="isUpdateTodo" [isOpen]="isUpdateTodo">
+    <h4>Update Todo</h4>
+    <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="todo.task" placeholder="task">
+    </div>
+    <div class="form-group">
+        <select class="form-control" [(ngModel)]="todo.completed">
+            <option value="true">Completed</option>
+            <option value="false">In Completed</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-danger btn-sm" (click)="isUpdateTodo = false">Cancel</button>
+        <button type="button" class="btn btn-success btn-sm ml-1" (click)="updateTodo(todo)">Update</button>
+    </div>
+</app-pop-up>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-lg-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Todo list</h4>
+                        <div class="add-items d-flex">
+                            <input type="text" class="form-control todo-list-input"
+                                placeholder="What do you need to do today?" [(ngModel)]="task" (keyup.enter)="addTodo()">
+                            <button class="add btn btn-primary font-weight-bold todo-list-add-btn"
+                                (click)="addTodo()">Add</button> </div>
+                        <div class="list-wrapper">
+                          <div class="row">
+                            <div class="col-4">
+                                <input type ="text" class="form-control" [(ngModel)]="searchTask" placeholder="Search Task" (ngModelChange)="onSearchTodo()">
+                            </div>
+                            <div class="col-4">
+                            </div>
+                            <div class="col-4">
+                                <select class="form-control float-right" [(ngModel)]="searchCompleted" (ngModelChange)="onFilterTodo()">
+                                <option disabled selected value="">Select Filter</option>
+                                <option value="">All</option>
+                                <option value="true">Completed</option>
+                                <option value="false">In Completed</option>
+                            </select>
+                            </div>
+                          </div>
+                            <ul class="d-flex flex-column-reverse todo-list">
+                                <li *ngFor="let todo of todos | filterByKey : tableFilterValue : tableFilterKey">
+                                    <div class="form-check"> <label class="form-check-label "
+                                            [ngClass]="{'completed': todo.completed}"> <input class="checkbox"
+                                                type="checkbox" [(ngModel)]="todo.completed"
+                                                (ngModelChange)="updateTodo(todo)">
+                                            {{todo?.task | titlecase}}
+                                        </label>
+                                        <span class="float-right">
+                                            <i class="fa fa-pencil fa-fw text-primary remove"
+                                                (click)="onUpdateTodo(todo)"></i>
+                                            <i class="remove fa fa-trash-o fa-lg ml-2 text-danger"
+                                                (click)="onDeleteTodo(todo._id)"></i>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

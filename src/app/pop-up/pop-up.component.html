@@ -1,0 +1,7 @@
+<div class="popUp-modal" [ngClass]="{'popUp-centered': center, 'mt-4': !center}" [@openClose]="isOpen ? 'open' : 'closed'">
+    <div class="popUp-modal-body mx-auto" [style.width.%]="width">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="popUp-modal-background"></div>
+
