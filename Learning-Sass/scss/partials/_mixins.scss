@@ -1,0 +1,41 @@
+@mixin card($bg-color, $heading-color, $link-color) {
+    background: $bg-color;
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    .heading {
+        color: $heading-color;
+        font-size: 18px;
+    }
+    p {
+        color: #ddd;
+        font-size: 12px;
+    }
+    a {
+        background: $link-color;
+        color:  $heading-color;
+        font-size: 12px;
+        text-decoration: none;
+        padding: 9px 12px;
+        border-radius: 5px;
+        display: inline-block;
+        &:hover {
+            background: darken($link-color, 15%);
+            // background: lighten($link-color, 15%);
+        }
+    }
+}
+// interpolation property
+@mixin gap($side, $value, $property) {
+    #{$property}-#{$side}: $value + px;
+}
+// if else
+@mixin myStyle($value) {
+    font-size: $value + px;
+    @if $value > 15 {color: red;}
+    @else if $value > 100{color: rgb(120, 105, 255);}
+    @else {color: green;}
+}
+// for loop
+

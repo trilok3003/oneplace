@@ -1,0 +1,8 @@
+$baseUrl: '../images/desktop/';
+$baseMobileUrl: '../images/mobile/';
+@function desktopImage($url) {
+    @return url($baseUrl + $url);
+}
+@function mobileImage($url) {
+    @return url($baseMobileUrl + $url);
+}
