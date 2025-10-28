@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+         .drag-container  , .drop-container  {
+          display: flex;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .drop-container {
+            margin-top: 20px;
+        }
+        .drag-container div , .drop-container div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            background: #535bc9;
+            color: white;
+            font-size: 25px;
+            margin-right: 3px;
+        }
+        .dragging {
+            opacity: 0.2;
+        }
+        .drag-select {
+         border: 2px dashed red;
+        }
+        .notifications {
+            background: #4fdbba;
+            height: 40px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            display: none;
+            justify-content: center;
+            align-items: center;
+          font-family: 'Montserrat', sans-serif;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="notifications">You Won</div>
+    <main>
+    <section class="drag-container"></section>
+    <section class="drop-container"></section>
+   </main>
+</body>
+<script src='index.js'></script>
+
+</html>
